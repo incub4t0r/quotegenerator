@@ -1,0 +1,257 @@
+
+body{
+    background-color: #121212;
+    color: ghostwhite;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width:100%;
+    animation: fadeInAnimation ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr;
+    gap: 10vh;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "clock"
+        "quote";
+}
+
+.clock { 
+    grid-area: clock;
+    position: relative;
+    /* background: #8eceff; */
+    /* padding: 1em; */
+
+}
+
+.clock *{
+    font-family: Rubik;
+    font-weight: 400;
+    /* font-size: 4em; */
+    text-align: center;
+}
+
+.quote { 
+    grid-area: quote; 
+    position: relative;
+    font-family: Georgia, serif;
+    font-size: 1.2em;
+    width: 80%;
+    margin: auto;
+    border-radius: 8px;
+    /* padding: 1.5rem; */
+    transition: 0.6s all;
+    user-select: none;
+}
+
+.quote_contents {
+    font-family: Rubik;
+    /* font-family: Georgia, serif; */
+    /* font-size: 1.2em; */
+    position: relative;
+    padding-top: 1em;
+    /* padding-left: 2.2em; */
+}
+/* StackOverflow: https://stackoverflow.com/questions/16325687/make-big-quotes-with-blockquote */
+/* Thanks: http://callmenick.com/post/styling-blockquotes-with-css-pseudo-classes */
+/* .quote_contents::before {
+    font-family: Georgia, serif;
+    position: absolute;
+    font-size: 4.5em;
+    line-height: 1;
+    top: 0;
+    left: 0;
+    content: "\201C";
+} */
+
+.quote_attribution {
+    font-family: Rubik;
+    font-style: italic;
+    /* font-family: Georgia, serif; */
+    margin-top: 5px;
+    margin-left: 5em;
+    font-size: 1em;
+}
+.quote_attribution:before {
+    content: "\2014 \2009"; 
+    /* padding-right: 1em; */
+}
+
+
+.timebox{
+    font-size: 30vw;
+    /* style="font-size: 10em;" */
+}
+.datebox{
+    font-size: 10vw;
+    font-style: normal;
+    font-weight: 300;
+}
+
+@media only screen and (min-width: 600px) {
+    * {
+        box-sizing: border-box;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        /* padding-top: 1em; */
+        margin: 0; 
+    }
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        gap: 0px 0px;
+        grid-auto-flow: row;
+        grid-template-areas:
+            "clock quote";
+    }
+    
+    
+    .clock { 
+        grid-area: clock;
+        position: relative;
+        /* background: #8eceff; */
+        /* padding: 1em; */
+    
+    }
+    
+    .clock *{
+        font-family: Rubik;
+        font-weight: 400;
+        font-size: 4em;
+        text-align: center;
+        /* text-align:right; */
+        /* padding-left: 2em;
+         */
+        /* text-align: right; */
+        /* padding-right: 1em; */
+    }
+
+    .timebox{
+        font-size: 10vw;
+        /* font-size: 30vw; */
+        /* style="font-size: 10em;" */
+    }
+    .datebox{
+        font-size: 5vw;
+        font-style: normal;
+        font-weight: 300;
+    }
+    
+    
+    body{
+        background:white;
+        background: #121212;
+        color:ghostwhite;
+        position: absolute;
+        /* left: 45%; */
+        left: 50%;
+        top: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        width:100%;
+    }
+    
+    
+    .quote { 
+        /* align-content:left; */
+        grid-area: quote; 
+        position: relative;
+        font-family: Georgia, serif;
+        font-size: 1.2em;
+        width: 70%;
+        /* margin-left: 10%; */
+        margin: auto;
+        /* cursor: pointer; */
+        border-radius: 8px;
+        padding: 1.5rem;
+        transition: 0.6s all;
+        /* background: #8eceff; */
+        user-select: none;
+    
+    }
+    
+    /* .quote *{
+        padding-right: 2em
+    } */
+    .quote:hover{
+        background: #086670;
+        transition: 0.6s all;
+    }
+    
+    .quote_contents {
+        font-family: Rubik;
+        /* font-family: Georgia, serif; */
+        font-size: 1.2em;
+        position: relative;
+        padding-top: 1em;
+        /* padding-left: 2.2em; */
+    }
+    /* StackOverflow: https://stackoverflow.com/questions/16325687/make-big-quotes-with-blockquote */
+    /* Thanks: http://callmenick.com/post/styling-blockquotes-with-css-pseudo-classes */
+    /* .quote_contents::before {
+        font-family: Georgia, serif;
+        position: absolute;
+        font-size: 4.5em;
+        line-height: 1;
+        top: 0;
+        left: 0;
+        content: "\201C";
+    } */
+    
+    .quote_attribution {
+        font-family: Rubik;
+        font-style: italic;
+        /* font-family: Georgia, serif; */
+        margin-top: 5px;
+        margin-left: 5em;
+        font-size: 1em;
+    }
+    /* .quote_attribution:before {
+        content: "\2014 \2009"; 
+        padding-right: 1em;
+    } */
+    
+    /* .new_quote{
+        font-family: Georgia, serif;
+    
+        cursor: pointer;
+        border-radius: 8px;
+        text-transform: uppercase;
+        width: 20%;
+        text-align: center;
+        margin: auto;
+        transition: 0.5s all;
+        background: white;
+        user-select: none;
+    }
+     */
+    
+    .clock{
+        padding: 0;
+        /* padding-bottom: 1em; */
+        text-align: center;
+        /* background:#8eceff; */
+        width: 70%;
+        margin: auto;
+        border-radius:8px;
+    }
+}
